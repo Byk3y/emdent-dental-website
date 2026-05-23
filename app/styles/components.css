@@ -7,11 +7,15 @@
   border-radius: var(--radius);
   cursor: pointer;
   font-weight: 700;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, filter 180ms ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .button.primary {
@@ -23,6 +27,7 @@
 
 .button.primary:hover {
   box-shadow: var(--shadow-glow);
+  filter: saturate(1.08);
 }
 
 .button.secondary {
@@ -52,7 +57,7 @@
   border: 1px solid rgba(18, 134, 198, 0.14);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  transition: transform 200ms ease, box-shadow 200ms ease, border 200ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border 220ms ease;
 }
 
 .card:hover {

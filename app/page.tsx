@@ -224,7 +224,19 @@ export default function Home() {
             <img className="tile tile-c" src="/hero-teeth/smile-3.avif" alt="Child brushing teeth" />
             <img className="tile tile-d" src="/hero-teeth/smile-5.avif" alt="Close-up of healthy teeth" />
             <img className="tile tile-e" src="/hero-teeth/smile-6.avif" alt="Smiling dental patient" />
-            <img className="tile tile-f" src="/hero-teeth/smile-4.avif" alt="Patient with braces smiling" />
+            <div className="tile tile-f media-tile">
+              <img src="/hero-teeth/smile-4.avif" alt="Patient with braces smiling" />
+              <video
+                src="/hero-teeth/smile-live.mp4"
+                poster="/hero-teeth/smile-4.avif"
+                muted
+                autoPlay
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -236,7 +248,19 @@ export default function Home() {
           <img className="tile tile-c" src="/hero-teeth/smile-3.avif" alt="Child brushing teeth" />
           <img className="tile tile-d" src="/hero-teeth/smile-5.avif" alt="Close-up of healthy teeth" />
           <img className="tile tile-e" src="/hero-teeth/smile-6.avif" alt="Smiling dental patient" />
-          <img className="tile tile-f" src="/hero-teeth/smile-4.avif" alt="Patient with braces smiling" />
+          <div className="tile tile-f media-tile">
+            <img src="/hero-teeth/smile-4.avif" alt="Patient with braces smiling" />
+            <video
+              src="/hero-teeth/smile-live.mp4"
+              poster="/hero-teeth/smile-4.avif"
+              muted
+              autoPlay
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+          </div>
         </div>
 
         <div className="mobile-hero-copy">

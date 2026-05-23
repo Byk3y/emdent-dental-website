@@ -44,6 +44,10 @@
     right: 18px;
   }
 
+  .split {
+    gap: 48px;
+  }
+
   .footer-social-block {
     justify-self: start;
   }
@@ -178,6 +182,30 @@
     line-height: 1;
   }
 
+  .mobile-menu-active .mobile-menu-links a {
+    animation: menu-link-reveal 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .mobile-menu-active .mobile-menu-links a:nth-child(2) {
+    animation-delay: 45ms;
+  }
+
+  .mobile-menu-active .mobile-menu-links a:nth-child(3) {
+    animation-delay: 90ms;
+  }
+
+  .mobile-menu-active .mobile-menu-links a:nth-child(4) {
+    animation-delay: 135ms;
+  }
+
+  .mobile-menu-active .mobile-menu-links a:nth-child(5) {
+    animation-delay: 180ms;
+  }
+
+  .mobile-menu-active .mobile-menu-links a:nth-child(6) {
+    animation-delay: 225ms;
+  }
+
   .mobile-menu-links a:first-child {
     color: #3a68ea;
   }
@@ -272,6 +300,7 @@
     font-size: var(--mobile-h1-size);
     font-weight: 800;
     line-height: 1.04;
+    animation: text-reveal-up 780ms cubic-bezier(0.2, 0.8, 0.2, 1) 520ms both;
   }
 
   .mobile-subtitle {
@@ -280,12 +309,14 @@
     font-size: var(--mobile-h2-size);
     line-height: 1.16;
     letter-spacing: 0;
+    animation: text-reveal-up 740ms cubic-bezier(0.2, 0.8, 0.2, 1) 640ms both;
   }
 
   .mobile-hero-buttons {
     display: grid;
     gap: 10px;
     margin: 0 22px 48px;
+    animation: soft-reveal-up 680ms cubic-bezier(0.2, 0.8, 0.2, 1) 760ms both;
   }
 
   .mobile-primary,
@@ -316,6 +347,7 @@
     font-size: var(--mobile-body-size);
     line-height: 1.55;
     letter-spacing: 0;
+    animation: soft-reveal-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 880ms both;
   }
 
   .whatsapp-float {
@@ -388,12 +420,35 @@
   }
 
   .section {
-    padding: 64px 0;
+    padding: 54px 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+
+  .service-topline {
+    margin-bottom: 30px;
+  }
+
+  .split {
+    gap: 34px;
   }
 
   .proof-side,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .proof-layout,
+  .appointment-wrap,
+  .testimonials,
+  .info-panel {
+    gap: 18px;
   }
 
   .proof-heading {
@@ -420,11 +475,15 @@
   }
 
   .footer-mega {
-    padding: 48px 0;
+    padding: 42px 0;
   }
 
   .footer-columns {
-    gap: 30px;
+    gap: 24px;
+  }
+
+  .footer-signature {
+    margin-top: 52px;
   }
 
   .social-row a {
@@ -438,13 +497,31 @@
   }
 
   .image-stage img {
-    min-height: 360px;
-    border-radius: 28px;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
   }
 
   .floating-badge {
-    position: static;
-    margin-top: 16px;
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    max-width: none;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 22px 50px -26px rgba(8, 20, 43, 0.5);
+  }
+
+  .floating-badge .icon-box {
+    width: 42px;
+    height: 42px;
+  }
+
+  .floating-badge strong,
+  .floating-badge span {
+    line-height: 1.12;
   }
 
   .appointment-form,
@@ -474,11 +551,50 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
   .desktop-mosaic .tile,
-  .mobile-mosaic .tile {
+  .mobile-mosaic .tile,
+  .media-tile video,
+  .hero-content h1,
+  .hero-subtitle,
+  .hero-content > p:not(.hero-subtitle),
+  .hero-actions,
+  .whatsapp-float,
+  .mobile-menu-active .mobile-menu-links a,
+  .mobile-hero-copy h1,
+  .mobile-subtitle,
+  .mobile-hero-buttons,
+  .mobile-intro {
     animation: none;
     opacity: 1;
+    filter: none;
     transform: none;
     will-change: auto;
+  }
+
+  .media-tile video {
+    display: none;
+  }
+
+  .section-header,
+  .service-card,
+  .image-stage,
+  .why-copy,
+  .proof-heading,
+  .proof-side,
+  .proof-photo,
+  .appointment-form,
+  .info-panel,
+  .testimonial,
+  .cta {
+    animation: none;
+    opacity: 1;
+    filter: none;
   }
 }
