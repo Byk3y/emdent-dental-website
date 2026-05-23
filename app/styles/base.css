@@ -1,0 +1,114 @@
+:root {
+  --background: #fbfdff;
+  --surface: #fbfdff;
+  --surface-lowest: #ffffff;
+  --surface-low: #eef9ff;
+  --surface-container: #e3f5ff;
+  --surface-high: #d6efff;
+  --surface-highest: #c7eaff;
+  --text: #0b1730;
+  --muted: #53607e;
+  --primary: #55c7f4;
+  --primary-bright: #79d8ff;
+  --primary-deep: #1286c6;
+  --primary-soft: #e6f8ff;
+  --secondary: #506078;
+  --secondary-soft: #e7edf5;
+  --tertiary: #f6b84b;
+  --tertiary-soft: #fff2d8;
+  --whatsapp: #18b75f;
+  --whatsapp-deep: #087a40;
+  --outline: #d4e2ea;
+  --inverse: #111827;
+  --white: #ffffff;
+  --font-primary: "Plus Jakarta Sans", Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", var(--font-primary); /* Cool modern sans. Try: "Fraunces", serif for luxury */
+  --space-base: 4px;
+  --radius: 14px;
+  --h1-size: 100.98px;
+  --h2-size: 56.826px;
+  --body-size: 18px;
+  --mobile-h1-size: 42px;
+  --mobile-h2-size: 28px;
+  --mobile-body-size: 18px;
+  --shadow-soft: 0 15px 35px -5px rgba(15, 65, 96, 0.08);
+  --shadow-glow: 0 30px 60px -12px rgba(18, 134, 198, 0.22);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-size: var(--body-size);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+  letter-spacing: 0;
+}
+
+h1 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-size: clamp(68px, 5.8vw, 96px);
+  line-height: 0.94;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h1 span,
+.accent {
+  color: var(--primary);
+}

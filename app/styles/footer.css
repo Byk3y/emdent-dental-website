@@ -1,0 +1,121 @@
+.footer {
+  margin-top: 0;
+  background: #ffffff;
+  border-top: 1px solid rgba(8, 20, 43, 0.08);
+}
+
+.footer-mega {
+  padding: 70px 0 56px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr)) minmax(220px, 0.8fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.footer h4 {
+  color: #050505;
+  margin: 0 0 18px;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.footer p,
+.footer a,
+.footer span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer-links {
+  display: grid;
+  gap: 15px;
+}
+
+.footer-links a,
+.footer-links span {
+  font-size: 1.05rem;
+}
+
+.footer-links a:hover {
+  color: #08142b;
+}
+
+.footer-social-block {
+  justify-self: end;
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.social-row a {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #050505;
+  border-radius: 8px;
+  color: #050505;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.social-row a:hover {
+  transform: translateY(-2px);
+  background: #050505;
+  color: #ffffff;
+}
+
+.social-row svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+.inline-whatsapp {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--whatsapp-deep);
+  font-weight: 800;
+}
+
+.footer-signature {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.footer-signature h2 {
+  margin: 0 0 20px;
+  color: #08142b;
+  font-size: clamp(3rem, 7.4vw, 7rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.footer-signature sup {
+  font-size: 0.28em;
+  line-height: 0;
+}
+
+.footer-signature p {
+  margin: 0;
+  color: #050505;
+  font-weight: 700;
+}
+
+.nigeria-mark {
+  display: inline-block;
+  width: 16px;
+  height: 24px;
+  margin-left: 8px;
+  border-radius: 3px;
+  vertical-align: middle;
+  background: linear-gradient(90deg, #2d8a71 0 38%, #ffffff 38% 62%, #2d8a71 62% 100%);
+}
