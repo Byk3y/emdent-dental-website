@@ -101,7 +101,8 @@ img {
 }
 
 .mobile-topbar,
-.mobile-home {
+.mobile-home,
+.mobile-menu-panel {
   display: none;
 }
 
@@ -1119,6 +1120,8 @@ h1 span,
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    position: relative;
+    z-index: 80;
     min-height: 82px;
     padding: 24px 24px 0;
     background: #ffffff;
@@ -1140,6 +1143,99 @@ h1 span,
     height: 3px;
     border-radius: 999px;
     background: #050505;
+  }
+
+  .mobile-menu-panel {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 120;
+    display: block;
+    min-height: min(760px, 100dvh);
+    padding: 28px 36px 34px;
+    border-bottom: 1px solid #050505;
+    background: #ffffff;
+    transform: translateY(-105%);
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .mobile-menu-active .mobile-menu-panel {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mobile-menu-panel-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 72px;
+  }
+
+  .mobile-menu-close {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .mobile-menu-close span {
+    position: absolute;
+    top: 18px;
+    left: 2px;
+    width: 36px;
+    height: 3px;
+    border-radius: 999px;
+    background: #050505;
+  }
+
+  .mobile-menu-close span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-close span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-logo {
+    display: inline-flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-menu-logo img {
+    width: 146px;
+    height: 46px;
+    border-radius: 12px;
+  }
+
+  .mobile-menu-links {
+    display: grid;
+    gap: 30px;
+    padding-top: 42px;
+  }
+
+  .mobile-menu-links a {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: #050505;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .mobile-menu-links a:first-child {
+    color: #3a68ea;
+  }
+
+  .mobile-menu-links a[href="#book"] {
+    margin-top: 8px;
+  }
+
+  .mobile-menu-links a[href^="https://wa.me"] {
+    color: var(--whatsapp-deep);
   }
 
   .mobile-brand {

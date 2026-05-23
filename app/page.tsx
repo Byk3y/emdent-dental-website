@@ -116,6 +116,7 @@ function SocialIcon({ name }: { name: "linkedin" | "instagram" | "facebook" | "y
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function submitAppointment(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -125,7 +126,7 @@ export default function Home() {
   }
 
   return (
-    <main className="page">
+    <main className={`page ${menuOpen ? "mobile-menu-active" : ""}`}>
       <nav className="nav" aria-label="Primary navigation">
         <div className="container nav-inner">
           <a className="brand logo-brand" href="#home" aria-label="Remdent home">
@@ -145,7 +146,14 @@ export default function Home() {
       </nav>
 
       <header className="mobile-topbar" aria-label="Mobile navigation">
-        <button className="mobile-menu" type="button" aria-label="Open menu">
+        <button
+          className="mobile-menu"
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu-panel"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
           <span />
           <span />
           <span />
@@ -154,6 +162,31 @@ export default function Home() {
           <img src="/remdent-logo.png" alt="Remdent" />
         </a>
       </header>
+
+      <div className="mobile-menu-panel" id="mobile-menu-panel" aria-hidden={!menuOpen}>
+        <div className="mobile-menu-panel-top">
+          <button
+            className="mobile-menu-close"
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span />
+            <span />
+          </button>
+          <a className="mobile-menu-logo logo-brand" href="#home" aria-label="Remdent home" onClick={() => setMenuOpen(false)}>
+            <img src="/remdent-logo.png" alt="Remdent" />
+          </a>
+        </div>
+        <nav className="mobile-menu-links" aria-label="Mobile menu">
+          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+          <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#book" onClick={() => setMenuOpen(false)}>Book Appointment</a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>WhatsApp</a>
+        </nav>
+      </div>
 
       <a
         className="whatsapp-float"
